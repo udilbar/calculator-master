@@ -32,12 +32,15 @@ elClearButton.addEventListener('click', function () {
 
 elCalculateButton.addEventListener('click', function () {
   const calc1 = new Calculator(x, y);
+
   if (state === '+') {
     displayButton.value = calc1.addition();
   } else if (state === '-') {
     displayButton.value = calc1.difference();
   } else if (state === 'x') {
     displayButton.value = calc1.product();
+  } else if (state === '/' && y === '0') {
+    displayButton.value = 'Invalid input';
   } else {
     displayButton.value = calc1.division();
   }
